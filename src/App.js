@@ -1,4 +1,3 @@
-import './App.css';
 import Navbar from './Navbar';
 import Home from './Home';
 
@@ -11,12 +10,7 @@ function App() {
     <div className="App">
       <Navbar />
       <div className="content">
-        <h1>{title}</h1>
-        <p>Liked {likes} times!</p>
-
-        <p>{2 + 3}</p>
-        <p>{[1,2,3,4,5].join(" ")}</p>
-        <a href={mySite} target="_blank">My portfolio</a>
+        <Home />
       </div>
     </div>
   );
