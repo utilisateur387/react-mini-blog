@@ -1,16 +1,27 @@
 import Navbar from './Navbar';
 import Home from './Home';
+import React, { useState } from 'react';
 
 function App() {
-  const title = "Welcome to the new blog";
-  const likes = 50;
-  const mySite = "http://miebi.space";
+
+  const [color, setColor] = useState();
+  const divStyle = { backgroundColor: color || 'pink' };
+  const colors = ['aquamarine', 'blue', 'pink', 'orange'];
+
+  const handleOnClick = (e, arg1) => {
+    console.log(e);
+    console.log(arg1);
+  };
 
   return (
-    <div className="App">
+    <div className="App" style={divStyle}>
       <Navbar />
       <div className="content">
-        <Home />
+
+        {colors.map((color) => <button onClick={() => setColor(color)}>{color}</button> )}
+        <br />
+        <button onClick={(e) => handleOnClick(e, "I'm an argument!")}>Log event and arguments</button>
+        <Home name="Yoshi" age="4" />
       </div>
     </div>
   );
