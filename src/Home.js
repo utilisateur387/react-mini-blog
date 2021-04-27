@@ -15,7 +15,7 @@ const Home = (props) => {
   return (
     <div className="home">
       <BlogList blogs={blogs} title="All blogs" handleDelete={handleDelete} />
-      <BlogList blogs={blogs.filter(blog => blog.author === 'mario')} title="Marios's blogs"/>
+      <BlogList blogs={blogs.filter(blog => blog.author === 'mario')} title="Marios's blogs" handleDelete={handleDelete} />
     </div>
   );
 }
