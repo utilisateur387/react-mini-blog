@@ -1,5 +1,7 @@
 const BlogList = ({ blogs, title, handleDelete }) => {
 
+  if (!blogs) return <p>Loading...</p>
+
   return (
     <div className="blog-list">
       <h2>{title}</h2>
