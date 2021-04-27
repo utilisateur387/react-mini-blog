@@ -1,3 +1,3 @@
 ## Mini blog
 
-Project created with React
+Project created with React (more soon)
