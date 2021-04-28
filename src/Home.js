@@ -3,6 +3,7 @@ import BlogList from './BlogList';
 
 const Home = (props) => {
   const [blogs, setBlogs] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch('http://localhost:8000/blogs')
@@ -15,6 +16,7 @@ const Home = (props) => {
 
   return (
     <div className="home">
+      { isLoading && <div>Loading...</div> }
       { blogs && <BlogList blogs={blogs} title="All blogs" /> }
     </div>
   );
@@ -22,6 +24,4 @@ const Home = (props) => {
 
 export default Home;
 
-
-// FILTER BLOGS THROUGH AUTHOR
-// <BlogList blogs={blogs.filter(blog => blog.author === 'mario')} title={"Mario's blogs"} handleDelete={handleDelete} />
+// npx json-server --watch data/db.json --port 8000
