@@ -6,12 +6,14 @@ const Home = (props) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:8000/blogs')
+    setTimeout(() => {
+      fetch('http://localhost:8000/blogs')
       .then(response => response.json())
       .then(data => {
-        console.log(data);
+        setIsLoading(false);
         setBlogs(data);
       })
+    }, 400)
   }, []);
 
   return (
