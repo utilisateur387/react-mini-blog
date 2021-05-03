@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 
-const useFetch = () => {
+const useFetch = (url) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     setTimeout(() => {
-      fetch('http://localhost:8000/blogs') // FETCH DATA FROM FAKE JSON API
+      fetch(url) // FETCH DATA FROM FAKE JSON API
         .then(response => {
           if (!response.ok) { // THROW AN ERROR IF ERROR IS NOT OK
             throw Error('Could not fetch the data for that resource')
@@ -24,7 +24,8 @@ const useFetch = () => {
           setIsLoading(false);
         })
     }, 400);
-  }, []);
+  }, [url]);
+  return { data, isLoading, error }
 }
 
 export default useFetch;
