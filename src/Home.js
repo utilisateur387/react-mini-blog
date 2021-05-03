@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
 import BlogList from './BlogList';
 import useFetch from './useFetch';
 
 const Home = (props) => {
   const { data: blogs, isLoading, error } = useFetch('http://localhost:8000/blogs');
-  const test = useFetch('http://localhost:8000/blogs');
 
   return (
     <div className="home">
