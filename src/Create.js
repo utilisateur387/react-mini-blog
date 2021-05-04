@@ -1,9 +1,11 @@
 import { useState } from 'react';
 
+const AUTHORS = ['mario', 'yoshi', 'miebi'];
+
 const Create = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
-  const [author, setAuthor] = useState('mario');
+  const [author, setAuthor] = useState(AUTHORS[0]);
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -35,8 +37,7 @@ const Create = () => {
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
           >
-            <option value="mario">mario</option>
-            <option value="yoshi">yoshi</option>
+            {AUTHORS.map((author, index) => (<option value={author} key={index} >{author}</option>) )}
           </select>
 
           <button>Add blog</button>
