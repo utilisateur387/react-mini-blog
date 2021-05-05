@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const AUTHORS = ['mario', 'yoshi', 'miebi'];
 
@@ -7,6 +8,7 @@ const Create = () => {
   const [body, setBody] = useState('');
   const [author, setAuthor] = useState(AUTHORS[0]);
   const [isPending, setIsPending] = useState(false);
+  const history = useHistory();
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -24,8 +26,11 @@ const Create = () => {
       body: JSON.stringify(blog)
     }).then(() => {
       console.log("New blog added");
-      setIsPending(false)
+      setIsPending(false);
+      // history.go(-1);
+      history.push('/');
     })
+
   };
 
   return (

@@ -29,6 +29,18 @@
       "body": "Hello thereeeee",
       "author": "yoshi",
       "id": 5
+    },
+    {
+      "title": "Today is Wednesday",
+      "body": "Content to come",
+      "author": "miebi",
+      "id": 6
+    },
+    {
+      "title": "I finished Codecamedy's React track",
+      "body": "Yayyyyyyy, finally",
+      "author": "yoshi",
+      "id": 7
     }
   ]
 }
